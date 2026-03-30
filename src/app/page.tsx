@@ -127,8 +127,9 @@ export default function HomePage() {
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((service) => (
-              <div
+              <Link
                 key={service.id}
+                href={`/services#${service.slug}`}
                 className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
               >
                 <div className="relative overflow-hidden">
@@ -161,7 +162,7 @@ export default function HomePage() {
                     </p>
                   )}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="mt-10 text-center">

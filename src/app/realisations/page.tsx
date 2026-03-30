@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
+import { ChevronLeft, ChevronRight, Clock, Hammer, Layers, X, ZoomIn } from "lucide-react";
 import { REALISATIONS, CATEGORIES } from "@/data/realisations";
 import type { Realisation } from "@/data/realisations";
 import { cn } from "@/lib/utils";
@@ -15,10 +15,90 @@ function getAllImages(r: Realisation) {
   return images;
 }
 
+
+function ProjectCard({
+  realisation: r,
+  imageCount,
+  onOpen,
+}: {
+  realisation: Realisation;
+  imageCount: number;
+  onOpen: () => void;
+}) {
+  const [showBefore, setShowBefore] = useState(false);
+  const displayImage = showBefore && r.beforeImage ? r.beforeImage : { src: r.image, alt: r.imageAlt };
+
+  return (
+    <article className="group mb-5 break-inside-avoid overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      <div className="relative cursor-pointer overflow-hidden" onClick={onOpen}>
+        <Image
+          src={displayImage.src}
+          alt={displayImage.alt}
+          width={800}
+          height={600}
+          className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+        {/* Bouton avant/après sur la photo */}
+        {r.beforeImage && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowBefore(!showBefore);
+            }}
+            className={cn(
+              "absolute left-3 top-3 z-10 rounded-full px-3 py-1.5 text-xs font-semibold backdrop-blur-sm transition-colors",
+              showBefore
+                ? "bg-charcoal/80 text-white hover:bg-charcoal"
+                : "bg-amber/90 text-white hover:bg-amber"
+            )}
+          >
+            {showBefore ? "AVANT — voir l'après" : "Voir l'avant"}
+          </button>
+        )}
+        {/* Overlay hover */}
+        <div className="absolute inset-0 flex items-end bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="w-full p-5">
+            <p className="text-xs font-medium uppercase tracking-wider text-amber">{r.category}</p>
+            <h2 className="mt-1 font-heading text-lg font-bold text-white">{r.title}</h2>
+          </div>
+          <div className="absolute right-4 top-4">
+            <div className="rounded-full bg-white/20 p-2 backdrop-blur-sm">
+              <ZoomIn className="h-4 w-4 text-white" />
+            </div>
+          </div>
+        </div>
+        {/* Badges */}
+        {!r.beforeImage && imageCount > 1 && (
+          <div className="absolute right-3 top-3 opacity-100 group-hover:opacity-0 transition-opacity">
+            <span className="rounded-full bg-charcoal/70 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
+              {imageCount} photos
+            </span>
+          </div>
+        )}
+      </div>
+
+      <div className="p-4">
+        <p className="text-xs font-medium uppercase tracking-wider text-amber">{r.category}</p>
+        <h2 className="mt-1 font-heading text-base font-semibold text-charcoal">{r.title}</h2>
+        <p className="mt-1 text-xs text-stone-400">{r.city} ({r.department})</p>
+        {r.duration && (
+          <div className="mt-2 flex items-center gap-1.5 text-xs text-stone-400">
+            <Clock className="h-3 w-3" />
+            <span>{r.duration}</span>
+          </div>
+        )}
+
+      </div>
+    </article>
+  );
+}
+
 export default function RealisationsPage() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [selected, setSelected] = useState<Realisation | null>(null);
   const [photoIndex, setPhotoIndex] = useState(0);
+  const [showBeforeAfter, setShowBeforeAfter] = useState(false);
 
   const filtered =
     activeCategory === "all"
@@ -30,13 +110,16 @@ export default function RealisationsPage() {
   const close = useCallback(() => {
     setSelected(null);
     setPhotoIndex(0);
+    setShowBeforeAfter(false);
   }, []);
 
   const prev = useCallback(() => {
+    setShowBeforeAfter(false);
     setPhotoIndex((i) => (i === 0 ? selectedImages.length - 1 : i - 1));
   }, [selectedImages.length]);
 
   const next = useCallback(() => {
+    setShowBeforeAfter(false);
     setPhotoIndex((i) => (i === selectedImages.length - 1 ? 0 : i + 1));
   }, [selectedImages.length]);
 
@@ -69,7 +152,6 @@ export default function RealisationsPage() {
               Chaque projet est pensé, fabriqué et posé avec soin.
             </p>
           </div>
-
           <div className="mt-10 flex flex-wrap justify-center gap-2">
             {CATEGORIES.map((cat) => (
               <button
@@ -96,61 +178,16 @@ export default function RealisationsPage() {
             {filtered.map((r) => {
               const images = getAllImages(r);
               return (
-                <article
+                <ProjectCard
                   key={r.id}
-                  onClick={() => {
+                  realisation={r}
+                  imageCount={images.length}
+                  onOpen={() => {
                     setSelected(r);
                     setPhotoIndex(0);
+                    setShowBeforeAfter(false);
                   }}
-                  className="group mb-5 cursor-pointer break-inside-avoid overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                >
-                  {/* Image */}
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src={r.image}
-                      alt={r.imageAlt}
-                      width={800}
-                      height={600}
-                      className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    {/* Overlay au hover */}
-                    <div className="absolute inset-0 flex items-end bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <div className="w-full p-5">
-                        <p className="text-xs font-medium uppercase tracking-wider text-amber">
-                          {r.category}
-                        </p>
-                        <h2 className="mt-1 font-heading text-lg font-bold text-white">
-                          {r.title}
-                        </h2>
-                      </div>
-                      <div className="absolute right-4 top-4">
-                        <div className="rounded-full bg-white/20 p-2 backdrop-blur-sm">
-                          <ZoomIn className="h-4 w-4 text-white" />
-                        </div>
-                      </div>
-                    </div>
-                    {/* Badge nombre de photos */}
-                    {images.length > 1 && (
-                      <div className="absolute right-3 top-3 rounded-full bg-charcoal/70 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm opacity-100 group-hover:opacity-0 transition-opacity">
-                        {images.length} photos
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Infos sous l'image */}
-                  <div className="p-4">
-                    <p className="text-xs font-medium uppercase tracking-wider text-amber">
-                      {r.category}
-                    </p>
-                    <h2 className="mt-1 font-heading text-base font-semibold text-charcoal">
-                      {r.title}
-                    </h2>
-                    <p className="mt-0.5 text-xs text-stone-400">
-                      {r.city} ({r.department})
-                    </p>
-                  </div>
-                </article>
+                />
               );
             })}
           </div>
@@ -166,101 +203,197 @@ export default function RealisationsPage() {
       {/* Lightbox plein écran */}
       {selected && (
         <div className="fixed inset-0 z-50 flex flex-col bg-charcoal/95 backdrop-blur-md">
-          {/* Header lightbox */}
-          <div className="flex items-center justify-between px-4 py-4 sm:px-8">
+          {/* Header */}
+          <div className="flex items-center justify-between border-b border-white/10 px-4 py-4 sm:px-8">
             <div className="min-w-0 flex-1">
               <h2 className="truncate font-heading text-lg font-bold text-white sm:text-xl">
                 {selected.title}
               </h2>
               <p className="text-sm text-stone-400">
                 {selected.category} — {selected.city} ({selected.department})
+                {selected.duration && <span> — {selected.duration}</span>}
               </p>
             </div>
-            <button
-              onClick={close}
-              className="ml-4 shrink-0 rounded-full bg-white/10 p-2.5 text-white transition-colors hover:bg-white/20"
-              aria-label="Fermer"
-            >
-              <X className="h-5 w-5" />
-            </button>
+            <div className="ml-4 flex items-center gap-2">
+              {selected.beforeImage && (
+                <button
+                  onClick={() => setShowBeforeAfter(!showBeforeAfter)}
+                  className={cn(
+                    "rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                    showBeforeAfter
+                      ? "bg-amber text-white"
+                      : "bg-white/10 text-white hover:bg-white/20"
+                  )}
+                >
+                  {showBeforeAfter ? "Voir l'après" : "Voir l'avant"}
+                </button>
+              )}
+              <button
+                onClick={close}
+                className="rounded-full bg-white/10 p-2.5 text-white transition-colors hover:bg-white/20"
+                aria-label="Fermer"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
           </div>
 
-          {/* Zone image principale */}
-          <div className="relative flex flex-1 items-center justify-center px-4 sm:px-16">
-            <div className="relative h-full w-full max-h-[70vh]">
-              <Image
-                key={selectedImages[photoIndex].src}
-                src={selectedImages[photoIndex].src}
-                alt={selectedImages[photoIndex].alt}
-                fill
-                className="object-contain"
-                sizes="100vw"
-                priority
-              />
+          {/* Zone principale */}
+          <div className="flex flex-1 overflow-hidden">
+            {/* Image / Before-After */}
+            <div className="relative flex flex-1 items-center justify-center px-4 sm:px-12">
+              <div className="relative h-full w-full max-h-[65vh]">
+                {showBeforeAfter && selected.beforeImage ? (
+                  <Image
+                    key="before"
+                    src={selected.beforeImage.src}
+                    alt={selected.beforeImage.alt}
+                    fill
+                    className="object-contain"
+                    sizes="100vw"
+                    priority
+                  />
+                ) : (
+                  <Image
+                    key={selectedImages[photoIndex].src}
+                    src={selectedImages[photoIndex].src}
+                    alt={selectedImages[photoIndex].alt}
+                    fill
+                    className="object-contain"
+                    sizes="100vw"
+                    priority
+                  />
+                )}
+                {/* Label avant/après */}
+                {showBeforeAfter && selected.beforeImage && (
+                  <div className="absolute top-4 left-1/2 -translate-x-1/2 rounded-full bg-charcoal/80 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm">
+                    AVANT
+                  </div>
+                )}
+              </div>
+              {selectedImages.length > 1 && !showBeforeAfter && (
+                <>
+                  <button
+                    onClick={prev}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-all hover:bg-white/25 sm:left-4"
+                    aria-label="Photo précédente"
+                  >
+                    <ChevronLeft className="h-6 w-6" />
+                  </button>
+                  <button
+                    onClick={next}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-all hover:bg-white/25 sm:right-4"
+                    aria-label="Photo suivante"
+                  >
+                    <ChevronRight className="h-6 w-6" />
+                  </button>
+                </>
+              )}
             </div>
 
-            {/* Flèches navigation */}
-            {selectedImages.length > 1 && (
-              <>
-                <button
-                  onClick={prev}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-all hover:bg-white/25 sm:left-4"
-                  aria-label="Photo précédente"
-                >
-                  <ChevronLeft className="h-6 w-6" />
-                </button>
-                <button
-                  onClick={next}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-all hover:bg-white/25 sm:right-4"
-                  aria-label="Photo suivante"
-                >
-                  <ChevronRight className="h-6 w-6" />
-                </button>
-              </>
-            )}
-          </div>
+            {/* Panneau détails (sidebar droite sur desktop) */}
+            <div className="hidden w-80 shrink-0 overflow-y-auto border-l border-white/10 bg-charcoal/50 p-6 lg:block">
+              <h3 className="font-heading text-lg font-bold text-white">{selected.title}</h3>
+              <p className="mt-1 text-sm text-amber">{selected.city} ({selected.department})</p>
 
-          {/* Barre du bas : miniatures + description */}
-          <div className="border-t border-white/10 bg-charcoal/50 px-4 py-4 sm:px-8">
-            <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center">
+              <p className="mt-4 text-sm leading-relaxed text-stone-300">
+                {selected.details || selected.description}
+              </p>
+
+              {selected.materials && selected.materials.length > 0 && (
+                <div className="mt-6">
+                  <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-stone-400">
+                    <Layers className="h-3.5 w-3.5" />
+                    Matériaux
+                  </div>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {selected.materials.map((m) => (
+                      <span key={m} className="rounded-full bg-white/10 px-3 py-1 text-xs text-stone-300">
+                        {m}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {selected.techniques && selected.techniques.length > 0 && (
+                <div className="mt-5">
+                  <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-stone-400">
+                    <Hammer className="h-3.5 w-3.5" />
+                    Techniques
+                  </div>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {selected.techniques.map((t) => (
+                      <span key={t} className="rounded-full bg-white/10 px-3 py-1 text-xs text-stone-300">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {selected.duration && (
+                <div className="mt-5">
+                  <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-stone-400">
+                    <Clock className="h-3.5 w-3.5" />
+                    Durée
+                  </div>
+                  <p className="mt-1 text-sm text-stone-300">{selected.duration}</p>
+                </div>
+              )}
+
               {/* Miniatures */}
               {selectedImages.length > 1 && (
-                <div className="flex gap-2 overflow-x-auto">
+                <div className="mt-6 border-t border-white/10 pt-4">
+                  <p className="text-xs font-medium uppercase tracking-wider text-stone-400">
+                    Photos ({selectedImages.length})
+                  </p>
+                  <div className="mt-2 grid grid-cols-3 gap-2">
+                    {selectedImages.map((img, i) => (
+                      <button
+                        key={i}
+                        onClick={() => { setPhotoIndex(i); setShowBeforeAfter(false); }}
+                        className={cn(
+                          "relative aspect-square overflow-hidden rounded-lg transition-all",
+                          i === photoIndex && !showBeforeAfter
+                            ? "ring-2 ring-amber ring-offset-1 ring-offset-charcoal"
+                            : "opacity-50 hover:opacity-80"
+                        )}
+                      >
+                        <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="80px" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Barre du bas (mobile) */}
+          <div className="border-t border-white/10 bg-charcoal/50 px-4 py-4 sm:px-8 lg:hidden">
+            <div className="flex items-start gap-4">
+              {selectedImages.length > 1 && (
+                <div className="flex shrink-0 gap-1.5 overflow-x-auto">
                   {selectedImages.map((img, i) => (
                     <button
                       key={i}
-                      onClick={() => setPhotoIndex(i)}
+                      onClick={() => { setPhotoIndex(i); setShowBeforeAfter(false); }}
                       className={cn(
-                        "relative h-14 w-18 shrink-0 overflow-hidden rounded-lg transition-all",
-                        i === photoIndex
-                          ? "ring-2 ring-amber ring-offset-2 ring-offset-charcoal"
+                        "relative h-12 w-14 shrink-0 overflow-hidden rounded-lg transition-all",
+                        i === photoIndex && !showBeforeAfter
+                          ? "ring-2 ring-amber ring-offset-1 ring-offset-charcoal"
                           : "opacity-50 hover:opacity-80"
                       )}
                     >
-                      <Image
-                        src={img.src}
-                        alt={img.alt}
-                        fill
-                        className="object-cover"
-                        sizes="72px"
-                      />
+                      <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="56px" />
                     </button>
                   ))}
                 </div>
               )}
-
-              {/* Description */}
-              <p className="flex-1 text-sm leading-relaxed text-stone-300 sm:text-right">
-                {selected.description}
+              <p className="flex-1 text-xs leading-relaxed text-stone-400 line-clamp-3">
+                {selected.details || selected.description}
               </p>
             </div>
-
-            {/* Compteur */}
-            {selectedImages.length > 1 && (
-              <p className="mt-2 text-center text-xs text-stone-500">
-                {photoIndex + 1} / {selectedImages.length}
-              </p>
-            )}
           </div>
         </div>
       )}
