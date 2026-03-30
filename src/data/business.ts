@@ -1,0 +1,35 @@
+export const BUSINESS = {
+  name: "L'Atelier WillBois",
+  legalName: "Blondel William",
+  artisan: "William Blondel",
+  metier: "Menuisier",
+  phone: "06 XX XX XX XX",
+  phoneHref: "+33600000000",
+  email: "willblondel78@gmail.com",
+  address: {
+    street: "Montesson",
+    city: "Montesson",
+    postalCode: "78360",
+    department: "Yvelines",
+    departmentCode: "78",
+    region: "Île-de-France",
+    country: "FR",
+  },
+  geo: { lat: 48.9085, lng: 2.1468 },
+  departments: ["78", "92"],
+  siret: "XXX XXX XXX XXXXX",
+  openingHours: "Mo-Sa 09:00-18:00",
+  priceRange: "€€",
+  url: "https://www.latelierwillbois.fr",
+  socialLinks: {
+    instagram: "https://www.instagram.com/will_bois78/",
+    facebook: "https://www.facebook.com/WillBois78",
+  },
+  formation: "Compagnons du devoir",
+  experience: "10+ ans",
+  specialites: ["Chêne massif", "Frêne massif", "Hêtre massif"],
+  description:
+    "Menuisier artisan formé chez les Compagnons du devoir, William conçoit et fabrique du mobilier et de l'agencement sur mesure en bois massif. Basé à Montesson (78), il intervient dans les Yvelines et les Hauts-de-Seine.",
+  descriptionCourte:
+    "Fabricant de meuble et agencement sur mesure en bois massif — Yvelines (78) & Hauts-de-Seine (92)",
+} as const;
