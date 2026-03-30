@@ -53,43 +53,63 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Valeurs / Engagement */}
-      <section className="bg-cream py-20">
+      {/* À propos */}
+      <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                icon: Award,
-                title: "Compagnon du devoir",
-                text: "Formation d'excellence en menuiserie et taille de pierre",
-              },
-              {
-                icon: Hammer,
-                title: `${BUSINESS.experience} d'expérience`,
-                text: "Un savoir-faire éprouvé dans le travail du bois massif",
-              },
-              {
-                icon: TreePine,
-                title: "Bois massif français",
-                text: "Chêne, frêne, hêtre — essences nobles et durables",
-              },
-              {
-                icon: MessageCircle,
-                title: "De A à Z",
-                text: "Conception, fabrication et pose — un seul interlocuteur",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-xl border border-stone-200 bg-white p-8 text-center shadow-sm"
-              >
-                <item.icon className="mx-auto h-10 w-10 text-amber" />
-                <h3 className="mt-4 font-heading text-lg font-semibold text-charcoal">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm text-stone-500">{item.text}</p>
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="relative mx-auto w-full max-w-md lg:mx-0">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-xl">
+                <Image
+                  src="/images/menuisier-montesson-78-william-blondel-atelier.jpg"
+                  alt="William Blondel — menuisier artisan dans son atelier à Montesson (78)"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
-            ))}
+              <div className="absolute -bottom-4 -right-4 rounded-xl bg-amber px-5 py-3 shadow-lg">
+                <p className="font-heading text-2xl font-bold text-white">{BUSINESS.experience}</p>
+                <p className="text-sm text-white/80">d&apos;expérience</p>
+              </div>
+            </div>
+            <div>
+              <p className="text-sm font-medium uppercase tracking-wider text-amber">À propos</p>
+              <h2 className="mt-2 font-heading text-3xl font-bold text-charcoal sm:text-4xl">
+                {BUSINESS.artisan}, menuisier de quartier à l&apos;ancienne
+              </h2>
+              <p className="mt-6 text-base leading-relaxed text-stone-500">
+                Artisan dans l&apos;âme, j&apos;aime travailler la matière — le bois, la pierre. Formé
+                chez les <strong className="text-charcoal">Compagnons du devoir</strong> en menuiserie
+                et en taille de pierre, j&apos;ai acquis plus de 10 ans d&apos;expérience dans le
+                travail du bois massif avant de créer L&apos;Atelier WillBois en 2023.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-stone-500">
+                Mon crédo : être un menuisier de quartier à l&apos;ancienne. Je travaille le chêne,
+                le frêne et le hêtre avec des techniques traditionnelles pour créer des pièces
+                uniques et durables. De la conception à la pose, je suis votre interlocuteur unique.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-stone-500">
+                Dans un souci éco-responsable, j&apos;optimise les chutes de bois de mes chantiers
+                en créant des planches à découper et des accessoires artisanaux.
+              </p>
+
+              <div className="mt-8 grid grid-cols-2 gap-4">
+                {[
+                  { icon: Award, title: "Compagnon du devoir", text: "Menuiserie & taille de pierre" },
+                  { icon: Hammer, title: "100% français", text: "De la conception à la pose" },
+                  { icon: TreePine, title: "Bois massif français", text: "Chêne, frêne, hêtre" },
+                  { icon: MessageCircle, title: "De A à Z", text: "Conception → pose" },
+                ].map((item) => (
+                  <div key={item.title} className="flex items-start gap-3">
+                    <item.icon className="mt-0.5 h-5 w-5 shrink-0 text-amber" />
+                    <div>
+                      <p className="text-sm font-semibold text-charcoal">{item.title}</p>
+                      <p className="text-xs text-stone-400">{item.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
