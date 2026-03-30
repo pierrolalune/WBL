@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Clock, Hammer, Layers, X, ZoomIn } from "lucide-react";
 import { REALISATIONS, CATEGORIES } from "@/data/realisations";
@@ -145,7 +145,7 @@ export default function RealisationsPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="font-heading text-4xl font-bold sm:text-5xl lg:text-6xl">
-              Réalisations
+              Réalisations — Yvelines&nbsp;(78) &amp; Hauts‑de‑Seine&nbsp;(92)
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-stone-300">
               Du sur mesure, du caractère, du bois massif.

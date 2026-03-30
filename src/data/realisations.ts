@@ -40,11 +40,11 @@ export const REALISATIONS: Realisation[] = [
     materials: ["Chêne massif", "Quincaillerie invisible"],
     duration: "3 semaines",
     techniques: ["Assemblage tenon-mortaise", "Finition huile naturelle"],
-    image: "/images/menuisier-montesson-78-placard-claustra.jpg",
+    image: "/images/menuisier-montesson-78-placard-claustra.webp",
     imageAlt: "Placard avec claustra en chêne massif à Montesson (78)",
     additionalImages: [
-      { src: "/images/menuisier-montesson-78-placard-claustra-2.jpg", alt: "Vue détail du claustra en chêne massif — Montesson (78)" },
-      { src: "/images/menuisier-montesson-78-placard-claustra-escalier.jpg", alt: "Placard claustra vue depuis l'escalier — Montesson (78)" },
+      { src: "/images/menuisier-montesson-78-placard-claustra-2.webp", alt: "Vue détail du claustra en chêne massif — Montesson (78)" },
+      { src: "/images/menuisier-montesson-78-placard-claustra-escalier.webp", alt: "Placard claustra vue depuis l'escalier — Montesson (78)" },
     ],
   },
   {
@@ -61,14 +61,14 @@ export const REALISATIONS: Realisation[] = [
     materials: ["Panneaux mélaminé", "Chêne massif pour les façades"],
     duration: "2 semaines",
     techniques: ["Prise de cotes laser", "Pose encastrée"],
-    image: "/images/menuisier-montesson-78-placard-sur-mesure.jpg",
+    image: "/images/menuisier-montesson-78-placard-sur-mesure.webp",
     imageAlt: "Placard sur mesure à Montesson (78) — vue extérieure",
     beforeImage: {
-      src: "/images/menuisier-montesson-78-placard-sur-mesure-debut.jpg",
+      src: "/images/menuisier-montesson-78-placard-sur-mesure-debut.webp",
       alt: "Avant — début de chantier, espace vide avant création du placard",
     },
     additionalImages: [
-      { src: "/images/menuisier-montesson-78-placard-sur-mesure-interieur.jpg", alt: "Vue intérieure du placard sur mesure — Montesson (78)" },
+      { src: "/images/menuisier-montesson-78-placard-sur-mesure-interieur.webp", alt: "Vue intérieure du placard sur mesure — Montesson (78)" },
     ],
   },
   {
@@ -85,7 +85,7 @@ export const REALISATIONS: Realisation[] = [
     materials: ["Chêne massif"],
     duration: "1 semaine",
     techniques: ["Lames verticales usinées", "Finition huile dure"],
-    image: "/images/menuisier-montesson-78-claustra-chene-massif.jpg",
+    image: "/images/menuisier-montesson-78-claustra-chene-massif.webp",
     imageAlt: "Claustra en chêne massif — menuisier à Montesson (78)",
   },
   {
@@ -102,11 +102,11 @@ export const REALISATIONS: Realisation[] = [
     materials: ["Frêne massif", "Assemblages bois uniquement"],
     duration: "2 semaines",
     techniques: ["Tenon-mortaise", "Queue d'aronde", "Ponçage grain 320"],
-    image: "/images/menuisier-montesson-78-meuble-tv-frene-massif.jpg",
+    image: "/images/menuisier-montesson-78-meuble-tv-frene-massif.webp",
     imageAlt: "Meuble TV en frêne massif sur mesure — Montesson (78)",
     additionalImages: [
-      { src: "/images/menuisier-montesson-78-meuble-tv-frene.jpg", alt: "Détail du meuble TV en frêne massif — Montesson (78)" },
-      { src: "/images/menuisier-montesson-78-assemblage-frene-massif.jpg", alt: "Assemblage en frêne massif — détail du travail artisanal" },
+      { src: "/images/menuisier-montesson-78-meuble-tv-frene.webp", alt: "Détail du meuble TV en frêne massif — Montesson (78)" },
+      { src: "/images/menuisier-montesson-78-assemblage-frene-massif.webp", alt: "Assemblage en frêne massif — détail du travail artisanal" },
     ],
   },
   {
@@ -123,10 +123,10 @@ export const REALISATIONS: Realisation[] = [
     materials: ["Pin massif traité", "Roulettes industrielles"],
     duration: "2 semaines (lot de 4)",
     techniques: ["Assemblage vissé renforcé", "Test de charge 150 kg"],
-    image: "/images/menuisier-montesson-78-chariot-xxl-pin.jpg",
+    image: "/images/menuisier-montesson-78-chariot-xxl-pin.webp",
     imageAlt: "Chariot XXL en pin massif — L'Atelier WillBois, Montesson (78)",
     additionalImages: [
-      { src: "/images/menuisier-montesson-78-chariots-xxl-commande.jpg", alt: "Commande de 4 chariots XXL en pin — L'Atelier WillBois" },
+      { src: "/images/menuisier-montesson-78-chariots-xxl-commande.webp", alt: "Commande de 4 chariots XXL en pin — L'Atelier WillBois" },
     ],
   },
   {
@@ -143,10 +143,10 @@ export const REALISATIONS: Realisation[] = [
     materials: ["Bois massif (chutes de chantier)", "Huile alimentaire"],
     duration: "3 jours",
     techniques: ["Collage bois de bout", "Finition huile alimentaire", "Gravure laser disponible"],
-    image: "/images/menuisier-montesson-78-planche-decouper-billot.jpg",
+    image: "/images/menuisier-montesson-78-planche-decouper-billot.webp",
     imageAlt: "Grande planche à découper type billot — L'Atelier WillBois, Montesson (78)",
     additionalImages: [
-      { src: "/images/menuisier-montesson-78-planche-fil-du-bois.jpg", alt: "Planche dans le fil du bois — travail artisanal" },
+      { src: "/images/menuisier-montesson-78-planche-fil-du-bois.webp", alt: "Planche dans le fil du bois — travail artisanal" },
     ],
   },
   {
@@ -163,11 +163,11 @@ export const REALISATIONS: Realisation[] = [
     materials: ["Contreplaqué bouleau 18mm", "Glissières à billes", "Visserie inox"],
     duration: "1 semaine",
     techniques: ["Tiroirs sur glissières", "Test de charge routier", "Optimisation 3D"],
-    image: "/images/menuisier-montesson-78-amenagement-berlingo-tiroirs.jpg",
+    image: "/images/menuisier-montesson-78-amenagement-berlingo-tiroirs.webp",
     imageAlt: "Aménagement Berlingo sur mesure avec tiroirs — Montesson (78)",
     additionalImages: [
-      { src: "/images/menuisier-montesson-78-amenagement-berlingo-sur-mesure.jpg", alt: "Berlingo aménagement sur mesure — vue d'ensemble" },
-      { src: "/images/menuisier-montesson-78-berlingo-test-charge.jpg", alt: "Test de charge de l'aménagement Berlingo — Montesson (78)" },
+      { src: "/images/menuisier-montesson-78-amenagement-berlingo-sur-mesure.webp", alt: "Berlingo aménagement sur mesure — vue d'ensemble" },
+      { src: "/images/menuisier-montesson-78-berlingo-test-charge.webp", alt: "Test de charge de l'aménagement Berlingo — Montesson (78)" },
     ],
   },
   {
@@ -184,11 +184,11 @@ export const REALISATIONS: Realisation[] = [
     materials: ["Chêne massif", "Crémaillères invisibles", "Vernis mat"],
     duration: "5 semaines",
     techniques: ["Fabrication modulaire", "Assemblage sur site", "Finition vernis mat"],
-    image: "/images/menuisier-montesson-78-bibliotheque-sur-mesure.jpg",
+    image: "/images/menuisier-montesson-78-bibliotheque-sur-mesure.webp",
     imageAlt: "Bibliothèque sur mesure en chêne massif — Montesson (78)",
     additionalImages: [
-      { src: "/images/menuisier-montesson-78-bibliotheque-chene-detail.jpg", alt: "Détail de la bibliothèque en chêne — Montesson (78)" },
-      { src: "/images/menuisier-montesson-78-bibliotheque-construction.jpg", alt: "Construction de la bibliothèque sur mesure — Montesson (78)" },
+      { src: "/images/menuisier-montesson-78-bibliotheque-chene-detail.webp", alt: "Détail de la bibliothèque en chêne — Montesson (78)" },
+      { src: "/images/menuisier-montesson-78-bibliotheque-construction.webp", alt: "Construction de la bibliothèque sur mesure — Montesson (78)" },
     ],
   },
   {
@@ -205,14 +205,14 @@ export const REALISATIONS: Realisation[] = [
     materials: ["Lames bois classe 4", "Saturateur extérieur"],
     duration: "2 semaines",
     techniques: ["Dépose et repose", "Structure renforcée", "Traitement saturateur"],
-    image: "/images/menuisier-montesson-78-terrasse-piscine-bois.jpg",
+    image: "/images/menuisier-montesson-78-terrasse-piscine-bois.webp",
     imageAlt: "Terrasse piscine en bois — rénovation à Montesson (78)",
     beforeImage: {
-      src: "/images/menuisier-montesson-78-terrasse-piscine-avant.jpg",
+      src: "/images/menuisier-montesson-78-terrasse-piscine-avant.webp",
       alt: "Avant — terrasse piscine grisée et abîmée",
     },
     additionalImages: [
-      { src: "/images/menuisier-montesson-78-terrasse-piscine-renovation.jpg", alt: "Rénovation en cours — structure et nouvelles lames" },
+      { src: "/images/menuisier-montesson-78-terrasse-piscine-renovation.webp", alt: "Rénovation en cours — structure et nouvelles lames" },
     ],
   },
   {
@@ -229,14 +229,14 @@ export const REALISATIONS: Realisation[] = [
     materials: ["Huile teintée extérieure", "Bois existant rénové"],
     duration: "1 semaine",
     techniques: ["Ponçage intégral", "Huile de protection 2 couches"],
-    image: "/images/menuisier-montesson-78-terrasse-veranda-bois.jpg",
+    image: "/images/menuisier-montesson-78-terrasse-veranda-bois.webp",
     imageAlt: "Terrasse véranda en bois massif — Montesson (78)",
     beforeImage: {
-      src: "/images/menuisier-montesson-78-terrasse-construction.jpg",
+      src: "/images/menuisier-montesson-78-terrasse-construction.webp",
       alt: "Avant — terrasse véranda grisée avant rénovation",
     },
     additionalImages: [
-      { src: "/images/menuisier-montesson-78-terrasse-veranda-finie.jpg", alt: "Terrasse véranda terminée — rendu satiné" },
+      { src: "/images/menuisier-montesson-78-terrasse-veranda-finie.webp", alt: "Terrasse véranda terminée — rendu satiné" },
     ],
   },
   {
@@ -253,10 +253,78 @@ export const REALISATIONS: Realisation[] = [
     materials: ["Bois massif traité autoclave", "Acier galvanisé peint"],
     duration: "1 semaine",
     techniques: ["Cadre bois assemblé", "Barreaux métalliques soudés", "Traitement autoclave"],
-    image: "/images/menuisier-montesson-78-portail-bois-cloture.jpg",
+    image: "/images/menuisier-montesson-78-portail-bois-cloture.webp",
     imageAlt: "Portail et clôture en bois — Montesson (78)",
     additionalImages: [
-      { src: "/images/menuisier-montesson-78-portail-bois-metal.jpg", alt: "Portail en bois et métal — fabrication en atelier" },
+      { src: "/images/menuisier-montesson-78-portail-bois-metal.webp", alt: "Portail en bois et métal — fabrication en atelier" },
     ],
+  },
+  {
+    id: "dressing-chene-boulogne",
+    title: "Dressing en chêne massif",
+    category: "Agencement",
+    categoryId: "agencement",
+    city: "Boulogne-Billancourt",
+    department: "92",
+    description:
+      "Dressing sur mesure en chêne massif avec penderies, tiroirs et étagères ajustables pour une chambre parentale.",
+    details:
+      "Projet réalisé dans un appartement haussmannien à Boulogne-Billancourt. Le dressing occupe tout un mur de la chambre parentale (3,80 m de large, 2,60 m de haut). Deux colonnes de penderies à hauteur différenciée, un bloc de 6 tiroirs central et des étagères ajustables sur les côtés. Façades en chêne massif huilé, intérieur en mélaminé chêne clair pour un rendu harmonieux.",
+    materials: ["Chêne massif", "Mélaminé chêne clair", "Quincaillerie Blum"],
+    duration: "3 semaines",
+    techniques: ["Prise de cotes laser", "Assemblage modulaire", "Finition huile naturelle"],
+    image: "/images/menuisier-montesson-78-placard-sur-mesure.webp",
+    imageAlt: "Dressing en chêne massif sur mesure — Boulogne-Billancourt (92)",
+  },
+  {
+    id: "bibliotheque-nanterre",
+    title: "Bibliothèque murale en frêne",
+    category: "Agencement",
+    categoryId: "agencement",
+    city: "Nanterre",
+    department: "92",
+    description:
+      "Bibliothèque murale en frêne massif sur toute la longueur du séjour avec éclairage intégré.",
+    details:
+      "Une bibliothèque de 5 mètres de long installée dans un séjour à Nanterre. Conception en frêne massif pour sa teinte claire et son veinage élégant. Étagères de différentes hauteurs pour accueillir livres, objets et vinyles. Éclairage LED intégré dans les niches supérieures. Fixation invisible au mur pour un rendu épuré et flottant.",
+    materials: ["Frêne massif", "LED intégrées", "Fixations invisibles"],
+    duration: "4 semaines",
+    techniques: ["Fixation murale invisible", "Intégration LED", "Finition vernis mat"],
+    image: "/images/menuisier-montesson-78-bibliotheque-sur-mesure.webp",
+    imageAlt: "Bibliothèque murale en frêne massif — Nanterre (92)",
+  },
+  {
+    id: "meuble-tv-rueil",
+    title: "Meuble TV suspendu en chêne",
+    category: "Mobilier",
+    categoryId: "mobilier",
+    city: "Rueil-Malmaison",
+    department: "92",
+    description:
+      "Meuble TV suspendu en chêne massif avec passe-câbles intégrés et compartiments ouverts.",
+    details:
+      "Meuble TV mural conçu pour un salon à Rueil-Malmaison. Fixé au mur à 40 cm du sol, il crée un effet de légèreté. Le plateau en chêne massif de 3 cm d'épaisseur accueille la TV, tandis que les compartiments ouverts permettent de ranger décodeur et console. Passe-câbles discrets à l'arrière pour un rendu propre.",
+    materials: ["Chêne massif", "Fixation murale renforcée"],
+    duration: "2 semaines",
+    techniques: ["Fixation suspendue", "Passe-câbles intégrés", "Finition huile dure"],
+    image: "/images/menuisier-montesson-78-meuble-tv-frene-massif.webp",
+    imageAlt: "Meuble TV suspendu en chêne massif — Rueil-Malmaison (92)",
+  },
+  {
+    id: "claustra-neuilly",
+    title: "Claustra séparation salon en hêtre",
+    category: "Agencement",
+    categoryId: "agencement",
+    city: "Neuilly-sur-Seine",
+    department: "92",
+    description:
+      "Claustra en hêtre massif pour séparer l'entrée du salon dans un appartement à Neuilly-sur-Seine.",
+    details:
+      "Le propriétaire souhaitait créer une séparation entre l'entrée et le salon sans perdre en luminosité. Le claustra en hêtre massif, avec ses lames verticales espacées de 4 cm, filtre le regard tout en laissant passer la lumière. Hauteur de 2,20 m, fixation sol-plafond invisible. Le hêtre a été choisi pour sa teinte claire et sa finesse de grain.",
+    materials: ["Hêtre massif", "Fixations sol-plafond invisibles"],
+    duration: "2 semaines",
+    techniques: ["Lames verticales usinées CNC", "Fixation invisible", "Finition huile naturelle"],
+    image: "/images/menuisier-montesson-78-claustra-chene-massif.webp",
+    imageAlt: "Claustra en hêtre massif — Neuilly-sur-Seine (92)",
   },
 ];

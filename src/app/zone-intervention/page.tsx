@@ -9,7 +9,7 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: `Zone d'intervention — Menuisier dans les Yvelines (78) et Hauts-de-Seine (92)`,
-  description: `${BUSINESS.name} intervient dans les Yvelines (78) et les Hauts-de-Seine (92) : Montesson, Versailles, Saint-Germain-en-Laye, Nanterre, Boulogne-Billancourt, Rueil-Malmaison et plus de 30 villes.`,
+  description: `Menuisier artisan intervenant dans les Yvelines (78) et Hauts-de-Seine (92) — Montesson, Versailles, Nanterre, Boulogne et 30+ villes. Devis gratuit.`,
   alternates: { canonical: `${BUSINESS.url}/zone-intervention` },
   openGraph: {
     title: `Zone d'intervention | ${BUSINESS.name}`,
@@ -18,6 +18,14 @@ export const metadata: Metadata = {
     siteName: BUSINESS.name,
     locale: "fr_FR",
     type: "website",
+    images: [
+      {
+        url: `${BUSINESS.url}/images/menuisier-montesson-78-bibliotheque-sur-mesure.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Zone d'intervention menuisier — Yvelines (78) et Hauts-de-Seine (92)`,
+      },
+    ],
   },
 };
 

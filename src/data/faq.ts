@@ -64,4 +64,19 @@ export const FAQ_DATA: FaqItem[] = [
     answer:
       "Vous pouvez me contacter par téléphone, par email ou via le formulaire de contact sur ce site. Décrivez-moi votre projet et je vous recontacte rapidement pour échanger et vous proposer un devis gratuit et détaillé, sans engagement.",
   },
+  {
+    question: "Intervenez-vous à Versailles et Saint-Germain-en-Laye ?",
+    answer:
+      "Oui, j'interviens régulièrement à Versailles, Saint-Germain-en-Laye et dans toutes les villes des Yvelines (78). Basé à Montesson, je me déplace facilement pour la prise de mesures, la livraison et la pose de vos meubles et agencements sur mesure.",
+  },
+  {
+    question: "Livrez-vous et posez-vous à Boulogne-Billancourt et Neuilly-sur-Seine ?",
+    answer:
+      "Absolument. Boulogne-Billancourt, Neuilly-sur-Seine, Rueil-Malmaison, Nanterre — j'interviens dans tout le département des Hauts-de-Seine (92) pour la livraison et la pose. Le déplacement est inclus dans le devis, sans frais supplémentaires.",
+  },
+  {
+    question: "Quel est le délai pour un projet de menuiserie à Montesson ou dans le 78 ?",
+    answer:
+      "Étant basé à Montesson (78360), les projets dans les Yvelines bénéficient d'une logistique optimale. Le délai moyen est de 3 à 6 semaines selon la complexité. Pour les villes proches comme Le Vésinet, Chatou ou Croissy-sur-Seine, je peux souvent proposer des créneaux de pose plus flexibles.",
+  },
 ];

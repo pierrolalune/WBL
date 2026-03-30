@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Award, ExternalLink, Hammer, MessageCircle, Newspaper, Star, TreePine } from "lucide-react";
@@ -11,6 +12,28 @@ import { AVIS, GOOGLE_REVIEWS_URL, AVERAGE_RATING, TOTAL_REVIEWS } from "@/data/
 
 export const dynamic = "force-static";
 
+export const metadata: Metadata = {
+  title: `Menuisier artisan à ${BUSINESS.address.city} (${BUSINESS.address.departmentCode}) — Mobilier & agencement sur mesure`,
+  description: `${BUSINESS.artisan}, menuisier Compagnon du devoir à ${BUSINESS.address.city} (${BUSINESS.address.departmentCode}). Mobilier et agencement sur mesure en bois massif. Devis gratuit — Yvelines (78) & Hauts-de-Seine (92).`,
+  alternates: { canonical: BUSINESS.url },
+  openGraph: {
+    title: `${BUSINESS.name} — Menuisier artisan dans les Yvelines (78) et Hauts-de-Seine (92)`,
+    description: `Mobilier et agencement sur mesure en bois massif — chêne, frêne, hêtre. Devis gratuit.`,
+    url: BUSINESS.url,
+    siteName: BUSINESS.name,
+    locale: "fr_FR",
+    type: "website",
+    images: [
+      {
+        url: `${BUSINESS.url}/images/menuisier-montesson-78-bibliotheque-sur-mesure.webp`,
+        width: 1200,
+        height: 630,
+        alt: `${BUSINESS.name} — menuisier artisan à ${BUSINESS.address.city} (${BUSINESS.address.departmentCode})`,
+      },
+    ],
+  },
+};
+
 export default function HomePage() {
   const featuredRealisations = REALISATIONS.slice(0, 3);
   const featuredFaq = FAQ_DATA.slice(0, 4);
@@ -21,7 +44,7 @@ export default function HomePage() {
       <section className="relative flex min-h-[85vh] items-center bg-charcoal">
         <div className="absolute inset-0">
           <Image
-            src="/images/menuisier-montesson-78-bibliotheque-sur-mesure.jpg"
+            src="/images/menuisier-montesson-78-bibliotheque-sur-mesure.webp"
             alt={`${BUSINESS.metier} artisan à ${BUSINESS.address.city} (${BUSINESS.address.departmentCode}) — mobilier sur mesure en bois massif`}
             fill
             priority
@@ -60,7 +83,7 @@ export default function HomePage() {
             <div className="relative mx-auto w-full max-w-md lg:mx-0">
               <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-xl">
                 <Image
-                  src="/images/menuisier-montesson-78-william-blondel-atelier.jpg"
+                  src="/images/menuisier-montesson-78-william-blondel-atelier.webp"
                   alt="William Blondel — menuisier artisan dans son atelier à Montesson (78)"
                   fill
                   className="object-cover"

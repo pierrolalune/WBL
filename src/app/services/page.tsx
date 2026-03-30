@@ -12,7 +12,7 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: `Services — Menuiserie sur mesure à ${BUSINESS.address.city} (${BUSINESS.address.departmentCode})`,
-  description: `Découvrez les prestations de ${BUSINESS.name} : agencement sur mesure, mobilier en bois massif, arts de la table et aménagement véhicule. Devis gratuit dans les Yvelines (78) et Hauts-de-Seine (92).`,
+  description: `Agencement, mobilier en bois massif, arts de la table et aménagement véhicule. Devis gratuit dans les Yvelines (78) et Hauts-de-Seine (92).`,
   alternates: { canonical: `${BUSINESS.url}/services` },
   openGraph: {
     title: `Services — Menuiserie sur mesure | ${BUSINESS.name}`,
@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     siteName: BUSINESS.name,
     locale: "fr_FR",
     type: "website",
+    images: [
+      {
+        url: `${BUSINESS.url}/images/menuisier-montesson-78-placard-claustra.webp`,
+        width: 1200,
+        height: 630,
+        alt: `Services de menuiserie sur mesure — ${BUSINESS.name}`,
+      },
+    ],
   },
 };
 
@@ -51,7 +59,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="font-heading text-4xl font-bold text-charcoal sm:text-5xl">
-              Mes services de menuiserie sur mesure
+              Services de menuiserie sur mesure — Yvelines&nbsp;(78) &amp; Hauts‑de‑Seine&nbsp;(92)
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-stone-500">
               Artisan menuisier formé chez les Compagnons du devoir, je propose un accompagnement

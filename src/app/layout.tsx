@@ -43,7 +43,7 @@ const localBusinessJsonLd = {
   telephone: BUSINESS.phone,
   email: BUSINESS.email,
   description: BUSINESS.description,
-  image: `${BUSINESS.url}/images/menuisier-montesson-78-meuble-tv-frene-massif.jpg`,
+  image: `${BUSINESS.url}/images/menuisier-montesson-78-meuble-tv-frene-massif.webp`,
   address: {
     "@type": "PostalAddress",
     streetAddress: BUSINESS.address.street,
