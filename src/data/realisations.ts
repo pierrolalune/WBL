@@ -45,11 +45,8 @@ export const REALISATIONS: Realisation[] = [
     techniques: ["Fabrication modulaire", "Assemblage sur site", "Finition vernis mat"],
     image: "/images/menuisier-chatou-78-bibliotheque-sur-mesure.webp",
     imageAlt: "Bibliothèque sur mesure à Chatou (78) — L'Atelier WillBois",
-    beforeImage: {
-      src: "/images/menuisier-chatou-78-bibliotheque-en-cours.webp",
-      alt: "Bibliothèque en cours de fabrication — Chatou (78)",
-    },
     additionalImages: [
+      { src: "/images/menuisier-chatou-78-bibliotheque-en-cours.webp", alt: "Bibliothèque en cours de fabrication — Chatou (78)" },
       { src: "/images/menuisier-chatou-78-bibliotheque-meuble-fini.webp", alt: "Meuble bibliothèque terminé — Chatou (78)" },
       { src: "/images/menuisier-chatou-78-bibliotheque-vue-ensemble.webp", alt: "Vue d'ensemble de la bibliothèque sur mesure — Chatou (78)" },
       { src: "/images/menuisier-chatou-78-bibliotheque-detail.webp", alt: "Détail de la bibliothèque en bois — Chatou (78)" },
