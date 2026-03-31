@@ -21,8 +21,8 @@ export const SERVICES: Service[] = [
       "Placards, dressings, claustras, bibliothèques encastrées… Chaque espace est unique, chaque agencement est pensé pour s'y intégrer parfaitement. De Montesson à Boulogne-Billancourt, je conçois et fabrique des rangements sur mesure qui optimisent votre intérieur dans les Yvelines (78) et Hauts-de-Seine (92).",
     shortDescription:
       "Placards, dressings, claustras et rangements intégrés conçus pour s'adapter parfaitement à votre intérieur.",
-    image: "/images/menuisier-montesson-78-placard-claustra.webp",
-    imageAlt: "Placard sur mesure avec claustra en chêne massif — menuisier à Montesson (78)",
+    image: "/images/menuisier-chatou-78-bibliotheque-meuble-fini.webp",
+    imageAlt: "Bibliothèque sur mesure en bois avec spots intégrés — menuisier à Chatou (78)",
     features: [
       "Placards et dressings sur mesure",
       "Claustras en bois massif",
@@ -41,8 +41,8 @@ export const SERVICES: Service[] = [
       "Meubles TV, tables, étagères, consoles… Je fabrique du mobilier unique en bois massif — chêne, frêne, hêtre — avec des assemblages traditionnels. Livraison et pose dans tout le 78 (Versailles, Saint-Germain-en-Laye) et le 92 (Nanterre, Rueil-Malmaison).",
     shortDescription:
       "Meubles TV, tables et mobilier unique fabriqués en bois massif avec des assemblages traditionnels.",
-    image: "/images/menuisier-montesson-78-meuble-tv-frene-massif.webp",
-    imageAlt: "Meuble TV en frêne massif sur mesure — menuisier à Montesson (78)",
+    image: "/images/menuisier-montesson-78-meuble-frene-sur-mesure.webp",
+    imageAlt: "Meuble en frêne massif avec assemblage queue droite — menuisier à Montesson (78)",
     features: [
       "Meubles TV sur mesure",
       "Tables et consoles",
@@ -61,8 +61,8 @@ export const SERVICES: Service[] = [
       "Vous avez déjà un meuble ou une base standard ? Je le sublime avec des éléments en bois massif sur mesure : façades, plans de travail, étagères, habillages… Le semi sur mesure combine le rapport qualité-prix d'un meuble existant avec la noblesse du bois massif. Disponible dans les Yvelines et les Hauts-de-Seine.",
     shortDescription:
       "Sublimez vos meubles existants avec des éléments en bois massif sur mesure — façades, plans de travail, habillages.",
-    image: "/images/menuisier-montesson-78-agencement-etageres.webp",
-    imageAlt: "Agencement semi sur mesure avec étagères en bois — menuisier à Montesson (78)",
+    image: "/images/menuisier-montesson-78-cuisine-sur-mesure.webp",
+    imageAlt: "Cuisine sur mesure avec plan de travail bois massif — menuisier à Montesson (78)",
     features: [
       "Façades en bois massif sur meuble existant",
       "Plans de travail sur mesure",
@@ -81,8 +81,8 @@ export const SERVICES: Service[] = [
       "Planches à découper, billots, plateaux de service… Des pièces utilitaires en bois massif, façonnées avec soin dans mon atelier à Montesson (78). Personnalisation par gravure laser pour un cadeau unique. Retrait en atelier ou livraison dans le 78 et 92.",
     shortDescription:
       "Planches à découper, billots et accessoires en bois massif. Gravure laser personnalisée disponible.",
-    image: "/images/menuisier-montesson-78-planche-decouper-billot.webp",
-    imageAlt: "Grande planche à découper type billot en bois massif — L'Atelier WillBois",
+    image: "/images/menuisier-montesson-78-planche-decouper-gravure.webp",
+    imageAlt: "Planches à découper avec gravure laser personnalisée — L'Atelier WillBois",
     features: [
       "Planches à découper artisanales",
       "Billots de cuisine",
@@ -121,8 +121,8 @@ export const SERVICES: Service[] = [
       "Terrasses en bois, platelages de piscine, vérandas, portails et clôtures… Je conçois et réalise vos aménagements extérieurs sur mesure à Montesson, Le Vésinet, Chatou et dans tout le 78 et 92. De la rénovation de terrasse à la création d'un portail, chaque projet est adapté à votre extérieur.",
     shortDescription:
       "Terrasses, platelages piscine, portails et clôtures — aménagements extérieurs sur mesure en bois.",
-    image: "/images/menuisier-montesson-78-terrasse-veranda-bois.webp",
-    imageAlt: "Terrasse en bois sur mesure — menuisier à Montesson (78)",
+    image: "/images/menuisier-chatou-78-renovation-terrasse-ipe.webp",
+    imageAlt: "Terrasse en bois IPé rénovée — menuisier à Chatou (78)",
     features: [
       "Terrasses en bois sur mesure",
       "Platelage de piscine",
