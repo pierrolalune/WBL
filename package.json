@@ -9,6 +9,7 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "fetch-reviews": "node scripts/fetch-google-reviews.mjs",
+    "convert-images": "node scripts/convert-images.mjs",
     "postbuild": "next-sitemap"
   },
   "dependencies": {

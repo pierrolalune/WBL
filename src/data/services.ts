@@ -21,7 +21,7 @@ export const SERVICES: Service[] = [
       "Placards, dressings, claustras, bibliothèques encastrées… Chaque espace est unique, chaque agencement est pensé pour s'y intégrer parfaitement. De Montesson à Boulogne-Billancourt, je conçois et fabrique des rangements sur mesure qui optimisent votre intérieur dans les Yvelines (78) et Hauts-de-Seine (92).",
     shortDescription:
       "Placards, dressings, claustras et rangements intégrés conçus pour s'adapter parfaitement à votre intérieur.",
-    image: "/images/menuisier-montesson-78-placard-claustra.webp",
+    image: "/images/menuisier-chatou-78-bibliotheque-sur-mesure.webp",
     imageAlt: "Placard sur mesure avec claustra en chêne massif — menuisier à Montesson (78)",
     features: [
       "Placards et dressings sur mesure",
@@ -61,7 +61,7 @@ export const SERVICES: Service[] = [
       "Vous avez déjà un meuble ou une base standard ? Je le sublime avec des éléments en bois massif sur mesure : façades, plans de travail, étagères, habillages… Le semi sur mesure combine le rapport qualité-prix d'un meuble existant avec la noblesse du bois massif. Disponible dans les Yvelines et les Hauts-de-Seine.",
     shortDescription:
       "Sublimez vos meubles existants avec des éléments en bois massif sur mesure — façades, plans de travail, habillages.",
-    image: "/images/menuisier-montesson-78-agencement-etageres.webp",
+    image: "/images/menuisier-montesson-78-cuisine-sur-mesure.webp",
     imageAlt: "Agencement semi sur mesure avec étagères en bois — menuisier à Montesson (78)",
     features: [
       "Façades en bois massif sur meuble existant",
@@ -81,7 +81,7 @@ export const SERVICES: Service[] = [
       "Planches à découper, billots, plateaux de service… Des pièces utilitaires en bois massif, façonnées avec soin dans mon atelier à Montesson (78). Personnalisation par gravure laser pour un cadeau unique. Retrait en atelier ou livraison dans le 78 et 92.",
     shortDescription:
       "Planches à découper, billots et accessoires en bois massif. Gravure laser personnalisée disponible.",
-    image: "/images/menuisier-montesson-78-planche-decouper-billot.webp",
+    image: "/images/menuisier-montesson-78-planche-decouper-artisanale.webp",
     imageAlt: "Grande planche à découper type billot en bois massif — L'Atelier WillBois",
     features: [
       "Planches à découper artisanales",
@@ -121,7 +121,7 @@ export const SERVICES: Service[] = [
       "Terrasses en bois, platelages de piscine, vérandas, portails et clôtures… Je conçois et réalise vos aménagements extérieurs sur mesure à Montesson, Le Vésinet, Chatou et dans tout le 78 et 92. De la rénovation de terrasse à la création d'un portail, chaque projet est adapté à votre extérieur.",
     shortDescription:
       "Terrasses, platelages piscine, portails et clôtures — aménagements extérieurs sur mesure en bois.",
-    image: "/images/menuisier-montesson-78-terrasse-veranda-bois.webp",
+    image: "/images/menuisier-montesson-78-terrasse-piscine-bois.webp",
     imageAlt: "Terrasse en bois sur mesure — menuisier à Montesson (78)",
     features: [
       "Terrasses en bois sur mesure",

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Clock, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { BUSINESS } from "@/data/business";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import { ContactForm } from "@/components/ContactForm";
 
 export const dynamic = "force-static";
 
@@ -55,82 +56,7 @@ export default function ContactPage() {
                 <h2 className="font-heading text-2xl font-bold text-charcoal">
                   Demander un devis gratuit
                 </h2>
-                <form className="mt-8 space-y-6" action={`mailto:${BUSINESS.email}`} method="POST" encType="text/plain">
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="block text-sm font-medium text-stone-700"
-                      >
-                        Nom complet
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        className="mt-1 w-full rounded-lg border border-stone-300 px-4 py-3 text-charcoal placeholder:text-stone-400 focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/20"
-                        placeholder="Votre nom"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm font-medium text-stone-700"
-                      >
-                        Téléphone
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        required
-                        className="mt-1 w-full rounded-lg border border-stone-300 px-4 py-3 text-charcoal placeholder:text-stone-400 focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/20"
-                        placeholder="06 XX XX XX XX"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="city"
-                      className="block text-sm font-medium text-stone-700"
-                    >
-                      Ville
-                    </label>
-                    <input
-                      type="text"
-                      id="city"
-                      name="city"
-                      className="mt-1 w-full rounded-lg border border-stone-300 px-4 py-3 text-charcoal placeholder:text-stone-400 focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/20"
-                      placeholder="Votre ville (ex : Montesson, Nanterre…)"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-stone-700"
-                    >
-                      Votre projet
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      required
-                      className="mt-1 w-full resize-none rounded-lg border border-stone-300 px-4 py-3 text-charcoal placeholder:text-stone-400 focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/20"
-                      placeholder="Décrivez votre projet : type de meuble, dimensions souhaitées, type de bois…"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full rounded-lg bg-amber px-6 py-4 text-lg font-semibold text-white transition-colors hover:bg-amber-light"
-                  >
-                    Envoyer ma demande
-                  </button>
-                  <p className="text-center text-sm text-stone-400">
-                    Devis gratuit et sans engagement — réponse sous 24h
-                  </p>
-                </form>
+                <ContactForm />
               </div>
             </div>
 
