@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${BUSINESS.url}/images/menuisier-montesson-78-placard-claustra.webp`,
+        url: `${BUSINESS.url}/images/menuisier-chatou-78-dressing-sur-mesure.webp`,
         width: 1200,
         height: 630,
         alt: `Réalisations menuiserie sur mesure — ${BUSINESS.name}`,

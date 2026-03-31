@@ -40,6 +40,7 @@ export function Footer() {
               <Link href="/zone-intervention" className="text-sm text-stone-400 transition-colors hover:text-white">Zone d&apos;intervention</Link>
               <Link href="/faq" className="text-sm text-stone-400 transition-colors hover:text-white">FAQ</Link>
               <Link href="/contact" className="text-sm text-stone-400 transition-colors hover:text-white">Contact</Link>
+              <Link href="/mentions-legales" className="text-sm text-stone-400 transition-colors hover:text-white">Mentions légales &amp; CGV</Link>
             </nav>
           </div>
 

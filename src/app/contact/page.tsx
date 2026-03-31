@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${BUSINESS.url}/images/menuisier-montesson-78-bibliotheque-sur-mesure.webp`,
+        url: `${BUSINESS.url}/images/menuisier-montesson-78-william-blondel-atelier.webp`,
         width: 1200,
         height: 630,
         alt: `Contact — ${BUSINESS.name}, menuisier artisan`,

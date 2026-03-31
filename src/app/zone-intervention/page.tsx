@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${BUSINESS.url}/images/menuisier-montesson-78-bibliotheque-sur-mesure.webp`,
+        url: `${BUSINESS.url}/images/menuisier-montesson-78-terrasse-piscine-finie.webp`,
         width: 1200,
         height: 630,
         alt: `Zone d'intervention menuisier — Yvelines (78) et Hauts-de-Seine (92)`,
