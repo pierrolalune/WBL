@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { BUSINESS } from "@/data/business";
-import { AVIS, AVERAGE_RATING, TOTAL_REVIEWS } from "@/data/avis";
+import { AVERAGE_RATING, TOTAL_REVIEWS } from "@/data/avis";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -108,17 +108,6 @@ const localBusinessJsonLd = {
     ratingCount: TOTAL_REVIEWS,
     reviewCount: TOTAL_REVIEWS,
   },
-  review: AVIS.map((avis) => ({
-    "@type": "Review",
-    author: { "@type": "Person", name: avis.author },
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: avis.rating,
-      bestRating: 5,
-    },
-    reviewBody: avis.text,
-    datePublished: avis.date,
-  })),
   sameAs: Object.values(BUSINESS.socialLinks).filter(Boolean),
   knowsAbout: [
     "Menuiserie sur mesure",
