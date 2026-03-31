@@ -18,14 +18,14 @@ export default function RealisationsPage() {
               Chaque projet est pensé, fabriqué et posé avec soin.
             </p>
           </div>
-
-          {/* Galerie interactive — Client Component */}
-          <RealisationsGallery
-            realisations={REALISATIONS}
-            categories={CATEGORIES}
-          />
         </div>
       </section>
+
+      {/* Galerie interactive — Client Component */}
+      <RealisationsGallery
+        realisations={REALISATIONS}
+        categories={CATEGORIES}
+      />
     </>
   );
 }

@@ -33,7 +33,7 @@ function ProjectCard({
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-      <div className="relative aspect-[4/3] cursor-pointer overflow-hidden" onClick={onOpen}>
+      <div className="relative aspect-[3/4] cursor-pointer overflow-hidden" onClick={onOpen}>
         <Image
           src={displayImage.src}
           alt={displayImage.alt}
@@ -141,40 +141,45 @@ export function RealisationsGallery({ realisations, categories }: RealisationsGa
   return (
     <>
       {/* Filtres catégories */}
-      <div className="mt-10 flex flex-wrap justify-center gap-2">
-        {categories.map((cat) => (
-          <button
-            key={cat.id}
-            onClick={() => setActiveCategory(cat.id)}
-            className={cn(
-              "rounded-full px-5 py-2.5 text-sm font-medium transition-all",
-              activeCategory === cat.id
-                ? "bg-white text-charcoal"
-                : "border border-stone-600 text-stone-300 hover:border-white hover:text-white"
-            )}
-          >
-            {cat.label}
-          </button>
-        ))}
-      </div>
+      <section className="bg-charcoal pb-12 pt-0">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-2">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={cn(
+                  "rounded-lg px-5 py-2.5 text-sm font-medium transition-all",
+                  activeCategory === cat.id
+                    ? "bg-amber text-white shadow-md"
+                    : "bg-white/10 text-stone-300 hover:bg-white/20 hover:text-white"
+                )}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Galerie */}
       <section className="bg-cream py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
             {filtered.map((r) => {
               const images = getAllImages(r);
               return (
-                <ProjectCard
-                  key={r.id}
-                  realisation={r}
-                  imageCount={images.length}
-                  onOpen={() => {
-                    setSelected(r);
-                    setPhotoIndex(0);
-                    setShowBeforeAfter(false);
-                  }}
-                />
+                <div key={r.id} className="mb-5 break-inside-avoid">
+                  <ProjectCard
+                    realisation={r}
+                    imageCount={images.length}
+                    onOpen={() => {
+                      setSelected(r);
+                      setPhotoIndex(0);
+                      setShowBeforeAfter(false);
+                    }}
+                  />
+                </div>
               );
             })}
           </div>
@@ -226,7 +231,7 @@ export function RealisationsGallery({ realisations, categories }: RealisationsGa
 
           <div className="flex flex-1 overflow-hidden">
             <div className="relative flex flex-1 items-center justify-center px-4 sm:px-12">
-              <div className="relative h-full w-full max-h-[65vh]">
+              <div className="relative h-full w-full max-h-[85vh]">
                 {showBeforeAfter && selected.beforeImage ? (
                   <Image
                     key="before"
