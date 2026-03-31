@@ -29,14 +29,13 @@ function ProjectCard({
   const displayImage = showBefore && r.beforeImage ? r.beforeImage : { src: r.image, alt: r.imageAlt };
 
   return (
-    <article className="group mb-5 break-inside-avoid overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-      <div className="relative cursor-pointer overflow-hidden" onClick={onOpen}>
+    <article className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      <div className="relative aspect-[4/3] cursor-pointer overflow-hidden" onClick={onOpen}>
         <Image
           src={displayImage.src}
           alt={displayImage.alt}
-          width={800}
-          height={600}
-          className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         {/* Bouton avant/après sur la photo */}
@@ -78,17 +77,18 @@ function ProjectCard({
         )}
       </div>
 
-      <div className="p-4">
+      <div className="flex flex-1 flex-col p-4">
         <p className="text-xs font-medium uppercase tracking-wider text-amber">{r.category}</p>
         <h2 className="mt-1 font-heading text-base font-semibold text-charcoal">{r.title}</h2>
-        <p className="mt-1 text-xs text-stone-400">{r.city} ({r.department})</p>
-        {r.duration && (
-          <div className="mt-2 flex items-center gap-1.5 text-xs text-stone-400">
-            <Clock className="h-3 w-3" />
-            <span>{r.duration}</span>
-          </div>
-        )}
-
+        <div className="mt-auto pt-2">
+          <p className="text-xs text-stone-400">{r.city} ({r.department})</p>
+          {r.duration && (
+            <div className="mt-1 flex items-center gap-1.5 text-xs text-stone-400">
+              <Clock className="h-3 w-3" />
+              <span>{r.duration}</span>
+            </div>
+          )}
+        </div>
       </div>
     </article>
   );
@@ -174,7 +174,7 @@ export default function RealisationsPage() {
       {/* Galerie */}
       <section className="bg-cream py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((r) => {
               const images = getAllImages(r);
               return (

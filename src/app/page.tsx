@@ -153,15 +153,14 @@ export default function HomePage() {
               <Link
                 key={service.id}
                 href={`/services#${service.slug}`}
-                className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
               >
-                <div className="relative overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.imageAlt}
-                    width={600}
-                    height={400}
-                    className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 flex items-end bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -170,7 +169,7 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-                <div className="p-5">
+                <div className="flex flex-1 flex-col justify-between p-5">
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-subtle text-amber">
                       <ServiceIcon name={service.icon} />

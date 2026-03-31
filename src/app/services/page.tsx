@@ -92,18 +92,18 @@ export default function ServicesPage() {
                     />
                   </div>
                 </div>
-                <div className={index % 2 === 1 ? "lg:order-1" : ""}>
+                <div className={`flex flex-col justify-center ${index % 2 === 1 ? "lg:order-1" : ""}`}>
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-subtle text-amber">
                     <ServiceIcon name={service.icon} className="h-7 w-7" />
                   </div>
                   <h2 className="font-heading text-3xl font-bold text-charcoal">
                     {service.title}
                   </h2>
-                  <p className="mt-4 text-base leading-relaxed text-stone-500">
+                  <p className="mt-4 line-clamp-4 text-base leading-relaxed text-stone-500">
                     {service.description}
                   </p>
                   <ul className="mt-6 space-y-3">
-                    {service.features.map((feature) => (
+                    {service.features.slice(0, 5).map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
                         <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-amber" />
                         <span className="text-sm text-stone-600">{feature}</span>
