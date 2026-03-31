@@ -16,15 +16,21 @@ export default function MentionsLegalesPage() {
     <>
       <BreadcrumbJsonLd items={[{ name: "Mentions légales", href: "/mentions-legales" }]} />
 
-      <section className="bg-cream-dark py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h1 className="font-heading text-3xl font-bold text-charcoal sm:text-4xl">
-            Mentions légales &amp; Conditions Générales de Vente
-          </h1>
+      <section className="bg-cream-dark py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="font-heading text-4xl font-bold text-charcoal sm:text-5xl">
+              Mentions légales &amp; Conditions Générales de Vente
+            </h1>
+            <p className="mt-6 text-lg leading-relaxed text-stone-500">
+              Informations légales, politique de confidentialité et conditions générales
+              de vente de {BUSINESS.name}.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="bg-cream py-16">
+      <section className="bg-cream py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="prose prose-stone max-w-none prose-headings:font-heading prose-headings:text-charcoal prose-h2:text-2xl prose-h3:text-xl prose-a:text-amber">
 

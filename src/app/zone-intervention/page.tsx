@@ -65,7 +65,7 @@ export default function ZoneInterventionPage() {
               {ZONES_78.map((zone) => (
                 <div
                   key={zone.name}
-                  className="rounded-xl border border-stone-200 bg-white p-5 shadow-sm"
+                  className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm"
                 >
                   <h3 className="font-heading text-lg font-semibold text-charcoal">
                     {zone.name}{" "}
@@ -93,7 +93,7 @@ export default function ZoneInterventionPage() {
               {ZONES_92.map((zone) => (
                 <div
                   key={zone.name}
-                  className="rounded-xl border border-stone-200 bg-white p-5 shadow-sm"
+                  className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm"
                 >
                   <h3 className="font-heading text-lg font-semibold text-charcoal">
                     {zone.name}{" "}
@@ -113,7 +113,7 @@ export default function ZoneInterventionPage() {
 
       <section className="bg-charcoal py-16">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl font-bold text-white">
+          <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">
             Votre ville n&apos;est pas listée ?
           </h2>
           <p className="mt-4 text-lg text-stone-300">

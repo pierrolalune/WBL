@@ -77,7 +77,7 @@ export default function HomePage() {
       </section>
 
       {/* À propos */}
-      <section className="bg-white py-20">
+      <section className="bg-cream py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative mx-auto w-full max-w-md lg:mx-0">
@@ -214,7 +214,7 @@ export default function HomePage() {
             {featuredRealisations.map((realisation) => (
               <div
                 key={realisation.id}
-                className="group overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm"
+                className="group overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
@@ -344,19 +344,19 @@ export default function HomePage() {
               Questions fréquentes
             </h2>
           </div>
-          <div className="mt-12 space-y-6">
+          <div className="mt-12 space-y-4">
             {featuredFaq.map((item) => (
               <details
                 key={item.question}
-                className="group rounded-xl border border-stone-200 bg-white"
+                className="group rounded-2xl border border-stone-200 bg-white shadow-sm"
               >
-                <summary className="flex cursor-pointer items-center justify-between px-6 py-5 font-heading text-lg font-semibold text-charcoal">
-                  {item.question}
-                  <span className="ml-4 shrink-0 text-stone-400 transition-transform group-open:rotate-45">
+                <summary className="flex cursor-pointer items-center justify-between px-6 py-5 text-left font-heading text-lg font-semibold text-charcoal">
+                  <span className="pr-4">{item.question}</span>
+                  <span className="shrink-0 text-xl text-stone-400 transition-transform group-open:rotate-45">
                     +
                   </span>
                 </summary>
-                <div className="px-6 pb-5 text-sm leading-relaxed text-stone-500">
+                <div className="border-t border-stone-100 px-6 py-5 text-base leading-relaxed text-stone-500">
                   {item.answer}
                 </div>
               </details>

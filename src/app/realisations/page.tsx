@@ -1,5 +1,6 @@
 import { REALISATIONS, CATEGORIES } from "@/data/realisations";
 import { RealisationsGallery } from "@/components/RealisationsGallery";
+import { PhoneButton } from "@/components/layout/PhoneButton";
 
 export const dynamic = "force-static";
 
@@ -26,6 +27,21 @@ export default function RealisationsPage() {
         realisations={REALISATIONS}
         categories={CATEGORIES}
       />
+
+      {/* CTA */}
+      <section className="bg-charcoal py-16">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">
+            Un projet vous inspire ?
+          </h2>
+          <p className="mt-4 text-lg text-stone-300">
+            Décrivez-moi votre idée, je vous propose un devis gratuit et personnalisé.
+          </p>
+          <div className="mt-8">
+            <PhoneButton variant="hero" />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

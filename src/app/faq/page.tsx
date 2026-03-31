@@ -68,7 +68,7 @@ export default function FaqPage() {
             {FAQ_DATA.map((item) => (
               <details
                 key={item.question}
-                className="group rounded-xl border border-stone-200 bg-white shadow-sm"
+                className="group rounded-2xl border border-stone-200 bg-white shadow-sm"
               >
                 <summary className="flex cursor-pointer items-center justify-between px-6 py-5 text-left font-heading text-lg font-semibold text-charcoal">
                   <span className="pr-4">{item.question}</span>
@@ -83,7 +83,7 @@ export default function FaqPage() {
             ))}
           </div>
 
-          <div className="mt-12 rounded-xl bg-amber-subtle p-8 text-center">
+          <div className="mt-12 rounded-2xl bg-amber-subtle p-8 text-center">
             <h2 className="font-heading text-xl font-semibold text-charcoal">
               Vous avez une autre question ?
             </h2>
