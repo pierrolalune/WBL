@@ -143,16 +143,16 @@ export function RealisationsGallery({ realisations, categories }: RealisationsGa
       {/* Filtres catégories */}
       <section className="bg-charcoal pb-12 pt-0">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-wrap justify-center gap-3">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
                 className={cn(
-                  "rounded-lg px-5 py-2.5 text-sm font-medium transition-all",
+                  "rounded-full border px-6 py-2.5 text-sm font-semibold tracking-wide transition-all duration-300",
                   activeCategory === cat.id
-                    ? "bg-amber text-white shadow-md"
-                    : "bg-white/10 text-stone-300 hover:bg-white/20 hover:text-white"
+                    ? "border-amber bg-amber text-white shadow-lg shadow-amber/25 scale-105"
+                    : "border-stone-500/40 bg-transparent text-stone-400 hover:border-amber/60 hover:text-white hover:shadow-md hover:shadow-amber/10"
                 )}
               >
                 {cat.label}
