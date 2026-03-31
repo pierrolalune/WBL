@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     template: `%s | ${BUSINESS.name}`,
   },
   description: BUSINESS.description,
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -38,7 +41,7 @@ export const metadata: Metadata = {
 
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Carpenter",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "Carpenter"],
   name: BUSINESS.name,
   url: BUSINESS.url,
   telephone: BUSINESS.phone,
