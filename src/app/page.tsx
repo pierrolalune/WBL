@@ -8,6 +8,7 @@ import { SERVICES } from "@/data/services";
 import { REALISATIONS } from "@/data/realisations";
 import { FAQ_DATA } from "@/data/faq";
 import { PhoneButton } from "@/components/layout/PhoneButton";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { AVIS, GOOGLE_REVIEWS_URL, AVERAGE_RATING, TOTAL_REVIEWS } from "@/data/avis";
 
 export const dynamic = "force-static";
@@ -38,8 +39,22 @@ export default function HomePage() {
   const featuredRealisations = REALISATIONS.slice(0, 3);
   const featuredFaq = FAQ_DATA.slice(0, 4);
 
+  const homeFaqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: featuredFaq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <JsonLd data={homeFaqJsonLd} />
       {/* Hero Section */}
       <section className="relative flex min-h-[85vh] items-center bg-charcoal">
         <div className="absolute inset-0">

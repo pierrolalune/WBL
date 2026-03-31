@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { BUSINESS } from "@/data/business";
+import { AVIS, AVERAGE_RATING, TOTAL_REVIEWS } from "@/data/avis";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -67,7 +68,57 @@ const localBusinessJsonLd = {
     "@type": "Person",
     name: BUSINESS.artisan,
     jobTitle: BUSINESS.metier,
+    description:
+      "Menuisier artisan formé chez les Compagnons du devoir, spécialiste du mobilier et de l'agencement sur mesure en bois massif.",
+    alumniOf: {
+      "@type": "Organization",
+      name: "Compagnons du devoir et du Tour de France",
+      url: "https://www.compagnons-du-devoir.com",
+    },
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "Menuiserie",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Compagnons du devoir et du Tour de France",
+        },
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "Taille de pierre et marbrerie",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Compagnons du devoir et du Tour de France",
+        },
+      },
+    ],
+    knowsAbout: [
+      "Menuiserie sur mesure",
+      "Travail du chêne",
+      "Travail du frêne",
+      "Travail du hêtre",
+      "Assemblages traditionnels",
+    ],
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: AVERAGE_RATING,
+    bestRating: 5,
+    ratingCount: TOTAL_REVIEWS,
+    reviewCount: TOTAL_REVIEWS,
+  },
+  review: AVIS.map((avis) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: avis.author },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: avis.rating,
+      bestRating: 5,
+    },
+    reviewBody: avis.text,
+    datePublished: avis.date,
+  })),
   sameAs: Object.values(BUSINESS.socialLinks).filter(Boolean),
   knowsAbout: [
     "Menuiserie sur mesure",

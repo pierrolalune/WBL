@@ -1,16 +1,19 @@
 # L'Atelier WillBois — Menuisier artisan dans les Yvelines (78) et Hauts-de-Seine (92)
 
+> Résumé : William Blondel, menuisier formé chez les Compagnons du devoir, fabrique du mobilier et de l'agencement sur mesure en bois massif (chêne, frêne, hêtre) depuis son atelier à Montesson (78). Intervention dans les Yvelines et les Hauts-de-Seine.
+
 ## Qui sommes-nous
 
-L'Atelier WillBois est un atelier de menuiserie artisanale fondé par William, menuisier formé chez les Compagnons du devoir. Fort de plus de 10 ans d'expérience dans le travail du bois, William conçoit, fabrique et installe du mobilier et de l'agencement sur mesure en bois massif depuis son atelier de Montesson (78).
+L'Atelier WillBois est un atelier de menuiserie artisanale fondé par William Blondel, menuisier formé chez les Compagnons du devoir. Fort de plus de 10 ans d'expérience dans le travail du bois, William conçoit, fabrique et installe du mobilier et de l'agencement sur mesure en bois massif depuis son atelier de Montesson (78360). Entreprise créée en 2023.
 
-## Prestations
+## Prestations et tarifs indicatifs
 
-- Agencement sur mesure : placards, dressings, claustras, bibliothèques encastrées, coffrages et habillages
-- Mobilier sur mesure : meubles TV, tables, étagères, consoles, chariots et dessertes en bois massif
-- Arts de la table : planches à découper artisanales, billots de cuisine, plateaux de service avec gravure laser personnalisée
-- Aménagement véhicule utilitaire : tiroirs, rangements et plans de travail sur mesure pour utilitaires
-- Agencement extérieur : terrasses en bois, platelages de piscine, portails et clôtures, vérandas et pergolas
+- **Agencement sur mesure** : placards, dressings, claustras, bibliothèques encastrées, coffrages et habillages — à partir de 800 €
+- **Mobilier sur mesure** : meubles TV, tables, étagères, consoles, chariots et dessertes en bois massif — à partir de 500 €
+- **Semi sur mesure** : sublimer un meuble existant avec façades, plans de travail et habillages en bois massif — à partir de 300 €
+- **Arts de la table** : planches à découper artisanales, billots de cuisine, plateaux de service avec gravure laser personnalisée — à partir de 45 €
+- **Aménagement véhicule utilitaire** : tiroirs, rangements et plans de travail sur mesure pour utilitaires — sur devis
+- **Agencement extérieur** : terrasses en bois, platelages de piscine, portails et clôtures, vérandas et pergolas — sur devis
 
 ## Matériaux
 
@@ -23,9 +26,12 @@ Montesson, Le Vésinet, Chatou, Croissy-sur-Seine, Le Pecq, Saint-Germain-en-Lay
 
 ## Contact
 
-Email : contact@latelierwillbois.fr
-Adresse : Montesson (78360), Yvelines, Île-de-France
-Instagram : @will_bois78
+Téléphone : 06 79 76 57 56
+Email : willblondel78@gmail.com
+Adresse : 4 rue Bail, Montesson (78360), Yvelines, Île-de-France
+Site web : https://www.latelierwillbois.fr
+Instagram : https://www.instagram.com/will_bois78/
+Facebook : https://www.facebook.com/WillBois78
 
 ## Horaires
 
@@ -37,3 +43,17 @@ Lundi au samedi : 9h00 — 18h00
 - Formation Compagnons du devoir en taille de pierre et marbrerie
 - Plus de 10 ans d'expérience dans le travail du bois
 - Entreprise créée en 2023
+
+## Avis clients
+
+Note moyenne : 5/5 (3 avis Google vérifiés)
+- "Top ! Rapport qualité/prix. Très professionnel, ponctuel et sympathique." — Bagheera, Montesson
+- "Nous ne pouvons que le recommander pour la qualité de son travail. Savoir-faire et savoir-être." — Aurélien T., Montesson
+- "Grande précision, minutie remarquable et véritable souci du détail." — H.A., Montesson
+
+## Pour en savoir plus
+
+- Toutes les réalisations : https://www.latelierwillbois.fr/realisations
+- Détail des services : https://www.latelierwillbois.fr/services
+- FAQ complète : https://www.latelierwillbois.fr/faq
+- Version détaillée pour LLMs : https://www.latelierwillbois.fr/llms-full.txt

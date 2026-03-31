@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { BUSINESS } from "@/data/business";
+
+export const metadata: Metadata = {
+  title: `Page introuvable — ${BUSINESS.name}`,
+  description: `La page que vous recherchez n'existe pas. Retrouvez ${BUSINESS.name}, menuisier artisan à ${BUSINESS.address.city} (${BUSINESS.address.departmentCode}) — mobilier et agencement sur mesure.`,
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (
