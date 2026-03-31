@@ -10,11 +10,31 @@ type FormStatus = "idle" | "sending" | "success" | "error";
 export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
 
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  function validate(form: HTMLFormElement): Record<string, string> {
+    const errs: Record<string, string> = {};
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value.trim();
+    const phone = (form.elements.namedItem("phone") as HTMLInputElement).value.trim();
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value.trim();
+
+    if (name.length < 2) errs.name = "Veuillez entrer votre nom (2 caractères minimum).";
+    if (!/^[\d\s+()./-]{10,}$/.test(phone)) errs.phone = "Veuillez entrer un numéro de téléphone valide.";
+    if (message.length < 10) errs.message = "Veuillez décrire votre projet (10 caractères minimum).";
+
+    return errs;
+  }
+
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
+
+    const validationErrors = validate(form);
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length > 0) return;
+
     setStatus("sending");
 
-    const form = e.currentTarget;
     const data = new FormData(form);
     data.append("access_key", WEB3FORMS_KEY);
     data.append("subject", `Nouveau devis — ${BUSINESS.name}`);
@@ -29,6 +49,7 @@ export function ContactForm() {
 
       if (json.success) {
         setStatus("success");
+        setErrors({});
         form.reset();
       } else {
         setStatus("error");
@@ -77,6 +98,7 @@ export function ContactForm() {
             className="mt-1 w-full rounded-lg border border-stone-300 px-4 py-3 text-charcoal placeholder:text-stone-400 focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/20"
             placeholder="Votre nom"
           />
+          {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
         </div>
         <div>
           <label htmlFor="phone" className="block text-sm font-medium text-stone-700">
@@ -90,6 +112,7 @@ export function ContactForm() {
             className="mt-1 w-full rounded-lg border border-stone-300 px-4 py-3 text-charcoal placeholder:text-stone-400 focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/20"
             placeholder="06 XX XX XX XX"
           />
+          {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
         </div>
       </div>
       <div>
@@ -116,6 +139,7 @@ export function ContactForm() {
           className="mt-1 w-full resize-none rounded-lg border border-stone-300 px-4 py-3 text-charcoal placeholder:text-stone-400 focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/20"
           placeholder="D&eacute;crivez votre projet : type de meuble, dimensions souhait&eacute;es, type de bois..."
         />
+        {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
       </div>
 
       {/* Anti-spam honeypot (caché aux vrais visiteurs) */}
